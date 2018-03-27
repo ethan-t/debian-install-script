@@ -3,10 +3,17 @@
 apt-get install sudo apt
 adduser ethan sudo
 
+# Change repos to use Sid
+
+sed -i 's/buster/sid/g' /etc/apt/sources.list
+apt -y update
+apt -y upgrade
+apt -y dist-upgrade
+
 # Install basic terminal programs
 
 apt -y install git
-apt -y install pip
+apt -y install python-pip
 apt -y install curl
 apt -y install wget
 apt -y install jq
@@ -14,6 +21,8 @@ apt -y install htop
 apt -y install elinks
 apt -y install nudoku
 apt -y install rxvt-unicode
+apt -y install nmap
+apt -y install fish
 
 # Install Kaaedit
 
@@ -27,10 +36,9 @@ pip3 install kaaedit
 
 # Install other programs with apt
 
-apt -y install nmap
+apt -y install feh
 apt -y install qtile
-apt -y install chromium-browser
-apt -y install fish
+apt -y install chromium-common
 
 # Install programs outside of apt
 
